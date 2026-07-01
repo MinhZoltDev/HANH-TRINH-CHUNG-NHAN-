@@ -1,4 +1,4 @@
-HÀNH TRÌNH CHỨNG NHÂN
+## HÀNH TRÌNH CHỨNG NHÂN
 MỘT WEB GAME GIẢI MẬT THƯ HTML/CSS/JAVASCRIPT VỀ CHỦ ĐỀ GIÁO LÝ CỦA HỘI THÁNH CÔNG GIÁO VIỆT NAM \
 VỚI CHỦ ĐỀ:
 **Em là CHỨNG NHÂN cho bạn Giêsu**  
@@ -15,7 +15,7 @@ Mở trực tiếp file `index.html` bằng trình duyệt.
 
 ## Nội dung chính
 
-- 20 màn chơi lấy ngẫu nhiên từ pool 50 mật thư tọa độ Kinh Thánh.
+- 20 màn chơi với ngẫu nhiên các dạng mật mã về một hành động hoặc sự kiện trong Kinh Thánh.
 - Timer giảm dần từ 30 phút ở màn 1 xuống 5 phút ở màn 20.
 - Sai đáp án thường reset về màn 1 và mất toàn bộ điểm.
 - Cửa hàng vật phẩm mở khóa sau màn 3, có thêm Hộp Quà May Mắn và Anh Huy - Chuyên Gia Mật Thư.
