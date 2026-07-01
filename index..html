@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HÀNH TRÌNH CHỨNG NHÂN</title>
+    <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Paytone+One&family=Protest+Riot&display=swap" rel="stylesheet">
+</head>
+<body>
+      <main class="app">
+    <div class="particles" id="particles"></div>
+
+    <section class="screen menu active" id="menuScreen" aria-label="Màn hình chờ">
+      <div class="menu-hero">
+        <img class="brand-logo" src="assests/img/image_264376.png" alt="Logo Thiếu Nhi Thánh Thể" />
+        <h1 class="title">
+          <span class="soft">Em là</span>
+          <span class="gold">CHỨNG NHÂN</span>
+          <span class="soft">cho bạn Giêsu</span>
+        </h1>
+        <p class="subtitle">CHỦ ĐỀ NĂM HỌC GIÁO LÝ | 2025 - 2026</p>
+        <div class="menu-actions">
+          <button class="primary-btn" id="startBtn">BẮT ĐẦU HÀNH TRÌNH</button>
+          <button class="secondary-btn" id="guideBtn">HƯỚNG DẪN LUẬT CHƠI</button>
+        </div>
+      </div>
+      <p class="quote">
+        "Anh em hãy nhiệt thành, không trễ nải, lấy tinh thần sốt sắng mà phục vụ Chúa.
+        Hãy vui mừng vì có niềm hy vọng, cứ kiên nhẫn lúc gặp gian truân và chuyên cần cầu nguyện" (Rm 12, 11-12).
+      </p>
+    </section>
+
+    <section class="screen game" id="gameScreen" aria-label="Màn chơi">
+      <header class="topbar">
+        <div class="game-name">Hành Trình Chứng Nhân</div>
+        <div class="status-card"><span>Vòng chơi</span><strong id="roundText">1/20</strong></div>
+        <div class="status-card timer" id="timerCard"><span>Thời gian</span><strong id="timerText">30:00</strong></div>
+        <div class="status-card"><span>Điểm số</span><strong id="scoreText">0</strong></div>
+        <div class="status-card"><span>Reset</span><strong id="resetText">0</strong></div>
+      </header>
+
+      <div class="board">
+        <article class="panel puzzle-panel" id="puzzlePanel">
+          <h2 id="levelTitle">Mật thư 1</h2>
+          <div class="level-meta">
+            <span class="tag" id="typeTag">Kinh Thánh Challenge</span>
+            <span class="tag" id="difficultyTag">Dễ</span>
+            <span class="tag" id="rewardTag">+10 điểm</span>
+          </div>
+          <div class="cipher-box" id="cipherBox">
+            <div class="field">
+              <label>Chìa khóa</label>
+              <div id="keyText"></div>
+            </div>
+            <div class="field">
+              <label>Mật thư</label>
+              <div class="cipher" id="cipherText"></div>
+            </div>
+            <div class="field">
+              <label>Bạch văn gợi ý</label>
+              <div class="hint" id="hintText"></div>
+            </div>
+          </div>
+          <canvas class="scratch-canvas" id="scratchCanvas" aria-label="Lớp phủ cào mật thư"></canvas>
+          <div class="scratch-note" id="scratchNote">Cạm bẫy Lu Mờ: hãy cào lớp phủ để đọc mật thư.</div>
+        </article>
+
+        <aside class="panel answer-panel">
+          <h2>Giải đố</h2>
+          <input id="answerInput" class="answer-input" autocomplete="off" placeholder="Nhập đáp án bạch văn..." />
+          <button class="submit-btn" id="submitBtn">NỘP ĐÁP ÁN</button>
+          <div class="message" id="message">Suy nghĩ, hướng mình về Chúa và tìm ra con đường Ngài đi.</div>
+          <div class="barrier" id="barrierText"></div>
+
+          <div class="morse-tool" id="morseTool">
+            <strong>Máy Morse hỗ trợ</strong>
+            <div class="morse-row">
+              <input id="morseInput" placeholder="Ví dụ: .- hoặc --." />
+              <div class="result-letter" id="morseResult">?</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen end-screen" id="endScreen" aria-label="Màn hình kết thúc">
+      <canvas class="fireworks" id="fireworksCanvas"></canvas>
+      <div class="end-card">
+        <p class="end-kicker">Hoàn tất 20 mật thư</p>
+        <h2>CHỨNG NHÂN TRUNG KIÊN CỦA ĐỨC KITÔ</h2>
+        <div class="summary-grid">
+          <div><span>Tổng điểm</span><strong id="finalScore">0</strong></div>
+          <div><span>Số lần reset</span><strong id="finalResets">0</strong></div>
+          <div><span>Thời gian</span><strong id="finalTime">00:00</strong></div>
+          <div><span>Vật phẩm đã mua</span><strong id="finalItems">0</strong></div>
+        </div>
+        <div class="menu-actions">
+          <button class="primary-btn" id="shareBtn">CHIA SẺ THÀNH TÍCH</button>
+          <button class="secondary-btn" id="restartBtn">CHƠI LẠI HÀNH TRÌNH MỚI</button>
+        </div>
+      </div>
+    </section>
+
+    <button class="shop-fab" id="shopFab" title="Cửa Hàng Vật Phẩm">✦</button>
+  </main>
+
+  <div class="modal" id="guideModal" role="dialog" aria-modal="true" aria-label="Hướng dẫn luật chơi">
+    <div class="modal-card">
+      <h2>Hướng Dẫn</h2>
+      <p>Hiện tại game đang trong quá trình cập nhật và đang cải thiện về phần cơ chế từng ngày một</p>
+      <p>Mật thư bao gồm các dạng như sau:Nhảy cóc, Semaphore, Morse, Ceasar</p>
+      <ul>
+        <li>Game có 20 màn,dữ liệu ban đầu có 50 mật thư chia theo 4 nhóm độ khó.</li>
+        <li>Sau khi reset, hệ thống chọn mật thư mới trong nhóm tương ứng và tránh lặp lại mật thư vừa gặp trong lượt chơi.</li>
+        <li>Từ màn 10 có cạm bẫy: khóa shop, giờ cao điểm, mất lòng tin, hoặc lu mờ cần cào lớp phủ.</li>
+        <li>Sai đáp án thường reset về màn 1; riêng cạm bẫy Mất Lòng Tin sẽ lùi 2-3 màn và trừ điểm nặng.</li>
+        <li>Cửa hàng Cheat đưa ra các vật phẩm hổ trợ cho người chơi trên hành trình đầy gian truân.</li>
+      </ul>
+      <div class="modal-actions">
+        <button class="secondary-btn modal-close" id="closeGuideBtn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="shopModal" role="dialog" aria-modal="true" aria-label="Cửa hàng vật phẩm">
+    <div class="modal-card">
+      <h2>Cửa Hàng Vật Phẩm</h2>
+      <p>Dùng điểm tích lũy để vượt qua những đoạn khó. Điểm hiện có: <strong id="shopScore">0</strong>.</p>
+      <div class="shop-grid">
+        <div class="shop-item">
+          <div><h3>Gia tăng thời gian</h3><p>Cộng thêm 60 giây vào màn hiện tại.</p></div>
+          <button class="shop-btn" data-buy="time">15 điểm</button>
+        </div>
+        <div class="shop-item">
+          <div><h3>Gợi ý đáp án</h3><p>Tiết lộ hướng đi sát hơn với bạch văn.</p></div>
+          <button class="shop-btn" data-buy="hint">20 điểm</button>
+        </div>
+        <div class="shop-item">
+          <div><h3>Máy Morse hỗ trợ</h3><p>Mở máy dịch chấm và gạch trong màn chơi.</p></div>
+          <button class="shop-btn" data-buy="morse">25 điểm</button>
+        </div>
+        <div class="shop-item">
+          <div><h3>Hộp Quà May Mắn</h3><p>35% nhảy lên 2 màn, 65% lùi 2 màn và trừ 150 điểm.</p></div>
+          <button class="shop-btn" data-buy="lucky">100 điểm</button>
+        </div>
+        <div class="shop-item">
+          <div><h3>Anh Huy - Chuyên Gia Mật Thư</h3><p>Mày có làm được không??, không thì để tao</p></div>
+          <button class="shop-btn" data-buy="expert">300 điểm</button>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="secondary-btn modal-close" id="closeShopBtn">Đóng</button>
+      </div>
+    </div>
+  </div>
+  <script src="assests/java/script.js"></script>
+
+</body>
+</html>
